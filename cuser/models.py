@@ -52,7 +52,7 @@ class AbstractCUser(AbstractBaseUser, PermissionsMixin):
     Email and password are required. Other fields are optional.
     """
 
-    models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     email = models.EmailField(
         _("email address"),
         unique=True,
